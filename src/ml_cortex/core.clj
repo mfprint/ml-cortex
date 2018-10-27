@@ -1,7 +1,14 @@
-(ns ml-cortex.core (:gen-class))
+(ns ml-cortex.core
+    (:require [cortex.nn.network :as network]
+        [cortex.nn.layers :as layers]
+        [cortex.nn.execute :as execute]
+        [cortex.optimize.adam :as adam]
+        [ml-cortex.data :as data]
+        [clojure.pprint :refer [pprint]])
+    (:gen-class))
 
-(slurp "./resources/googleplaystore.txt")
-(with-open [rdr (clojure.java.io/reader "./resources/googleplaystore.txt")]
+(slurp "./resources/googlePlayStoreCleaned.txt")
+(with-open [rdr (clojure.java.io/reader "./resources/googlePlayStoreCleaned.txt")]
 (def data (reduce conj [] (line-seq rdr)) )
     ;; (println data)
 )
@@ -45,7 +52,7 @@
 
 ;;Filter Operations
 (def paidApps
-    (into[]
+    (into []
         (filter (fn [data]
             (def _type (get data 6))
             (= _type "Paid")
@@ -106,10 +113,12 @@
 (def dataCount (count dataStructure))
 (println "DATA COUNT:" dataCount)
 
+;; ----------------|| Limpieza de datos ||---------------- ;;
+
 (def x
     (into []
         (map (fn [data]
-            (into [] (concat (subvec data 1 2) (subvec data 9 10)))
+            (into [] (subvec data 2 5))
         ) dataStructure)
     )
 )
@@ -118,7 +127,7 @@
 (def y
     (into []
         (map (fn [data]
-            (into [] (concat (subvec data 2 3) (subvec data 5 6)))
+            (into [] (subvec data 6 7))
         ) dataStructure)
     )
 )
@@ -141,6 +150,48 @@
     (subvec y (int (* dataCount 0.8)) dataCount)
 )
 
+;; ----------------|| Cortex ||---------------- ;;
+
+; (def my_data (subvec (into [] (data/load-data)) 0 11))
+(defonce all-data (-> xTrain
+    ; (shuffle)
+    ; (data/train-validation-split 0.70)
+))
+
+(def num-nodes 32) ;; Num de neuronas
+
+(def network-architecture
+    [(layers/input 11 1 1 :id :x)
+
+    (layers/linear num-nodes)
+    (layers/relu)
+
+    (layers/linear num-nodes)
+    (layers/relu)
+
+    (layers/linear 1 :id :y)])
+
+(def starting-network {:network  (network/linear-network
+    network-architecture)
+    :optimizer (adam/adam :alpha 0.01)})
+
+(defn validate
+    "Validación de la red"
+    [cur-network]
+    (println "Resultados:" (pr-str (data/stats (:network cur-network) (:validation all-data)))))
+
+(defn train
+    "Entrenamiento de la red"
+    [incoming-network epoch-count]
+    (loop [{:keys [network optimizer] :as cur-network} incoming-network epoch 0]
+        (if (zero? (mod epoch 10))
+          (println "Epoch: " epoch (pr-str (data/stats network (:train all-data)))))
+
+        (if (> epoch-count epoch)
+          (recur (execute/train network (:train all-data) :optimizer optimizer) (inc epoch))
+          cur-network)))
+
 (defn -main [& args]
-    (println "Hello, World!")
-)
+    (println "Entenamiento en 100 epocas")
+    (let [r1 (train starting-network 100)]
+        (validate r1)))
