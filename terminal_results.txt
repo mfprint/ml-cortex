@@ -1,0 +1,123 @@
+Epoch:  0 {:mean-squared-error 4.4185481450672244E14, :mean-error 3719849.7169069657}
+CUDA backend creation failed, reverting to CPU
+CUDA backend creation failed, reverting to CPU
+CUDA backend creation failed, reverting to CPU
+CUDA backend creation failed, reverting to CPU
+CUDA backend creation failed, reverting to CPU
+CUDA backend creation failed, reverting to CPU
+CUDA backend creation failed, reverting to CPU
+CUDA backend creation failed, reverting to CPU
+CUDA backend creation failed, reverting to CPU
+CUDA backend creation failed, reverting to CPU
+CUDA backend creation failed, reverting to CPU
+Epoch:  10 {:mean-squared-error 1.86028314523389E10, :mean-error 23494.50576093088}
+CUDA backend creation failed, reverting to CPU
+CUDA backend creation failed, reverting to CPU
+CUDA backend creation failed, reverting to CPU
+CUDA backend creation failed, reverting to CPU
+CUDA backend creation failed, reverting to CPU
+CUDA backend creation failed, reverting to CPU
+CUDA backend creation failed, reverting to CPU
+CUDA backend creation failed, reverting to CPU
+CUDA backend creation failed, reverting to CPU
+CUDA backend creation failed, reverting to CPU
+CUDA backend creation failed, reverting to CPU
+Epoch:  20 {:mean-squared-error 34572.45787598974, :mean-error 5.91597253852217}
+CUDA backend creation failed, reverting to CPU
+CUDA backend creation failed, reverting to CPU
+CUDA backend creation failed, reverting to CPU
+CUDA backend creation failed, reverting to CPU
+CUDA backend creation failed, reverting to CPU
+CUDA backend creation failed, reverting to CPU
+CUDA backend creation failed, reverting to CPU
+CUDA backend creation failed, reverting to CPU
+CUDA backend creation failed, reverting to CPU
+CUDA backend creation failed, reverting to CPU
+CUDA backend creation failed, reverting to CPU
+Epoch:  30 {:mean-squared-error 0.2346813819837785, :mean-error 0.4501109560858311}
+CUDA backend creation failed, reverting to CPU
+CUDA backend creation failed, reverting to CPU
+CUDA backend creation failed, reverting to CPU
+CUDA backend creation failed, reverting to CPU
+CUDA backend creation failed, reverting to CPU
+CUDA backend creation failed, reverting to CPU
+CUDA backend creation failed, reverting to CPU
+CUDA backend creation failed, reverting to CPU
+CUDA backend creation failed, reverting to CPU
+CUDA backend creation failed, reverting to CPU
+CUDA backend creation failed, reverting to CPU
+Epoch:  40 {:mean-squared-error 0.22157670388142817, :mean-error 0.450096727456381}
+CUDA backend creation failed, reverting to CPU
+CUDA backend creation failed, reverting to CPU
+CUDA backend creation failed, reverting to CPU
+CUDA backend creation failed, reverting to CPU
+CUDA backend creation failed, reverting to CPU
+CUDA backend creation failed, reverting to CPU
+CUDA backend creation failed, reverting to CPU
+CUDA backend creation failed, reverting to CPU
+CUDA backend creation failed, reverting to CPU
+CUDA backend creation failed, reverting to CPU
+CUDA backend creation failed, reverting to CPU
+Epoch:  50 {:mean-squared-error 0.22213454574493316, :mean-error 0.45324467392378126}
+CUDA backend creation failed, reverting to CPU
+CUDA backend creation failed, reverting to CPU
+CUDA backend creation failed, reverting to CPU
+CUDA backend creation failed, reverting to CPU
+CUDA backend creation failed, reverting to CPU
+CUDA backend creation failed, reverting to CPU
+CUDA backend creation failed, reverting to CPU
+CUDA backend creation failed, reverting to CPU
+CUDA backend creation failed, reverting to CPU
+CUDA backend creation failed, reverting to CPU
+CUDA backend creation failed, reverting to CPU
+Epoch:  60 {:mean-squared-error 0.22107248777640015, :mean-error 0.4513534199177402}
+CUDA backend creation failed, reverting to CPU
+CUDA backend creation failed, reverting to CPU
+CUDA backend creation failed, reverting to CPU
+CUDA backend creation failed, reverting to CPU
+CUDA backend creation failed, reverting to CPU
+CUDA backend creation failed, reverting to CPU
+CUDA backend creation failed, reverting to CPU
+CUDA backend creation failed, reverting to CPU
+CUDA backend creation failed, reverting to CPU
+CUDA backend creation failed, reverting to CPU
+CUDA backend creation failed, reverting to CPU
+Epoch:  70 {:mean-squared-error 0.216404833498216, :mean-error 0.43939993180566295}
+CUDA backend creation failed, reverting to CPU
+CUDA backend creation failed, reverting to CPU
+CUDA backend creation failed, reverting to CPU
+CUDA backend creation failed, reverting to CPU
+CUDA backend creation failed, reverting to CPU
+CUDA backend creation failed, reverting to CPU
+CUDA backend creation failed, reverting to CPU
+CUDA backend creation failed, reverting to CPU
+CUDA backend creation failed, reverting to CPU
+CUDA backend creation failed, reverting to CPU
+CUDA backend creation failed, reverting to CPU
+Epoch:  80 {:mean-squared-error 0.24241149849176627, :mean-error 0.48350763233731026}
+CUDA backend creation failed, reverting to CPU
+CUDA backend creation failed, reverting to CPU
+CUDA backend creation failed, reverting to CPU
+CUDA backend creation failed, reverting to CPU
+CUDA backend creation failed, reverting to CPU
+CUDA backend creation failed, reverting to CPU
+CUDA backend creation failed, reverting to CPU
+CUDA backend creation failed, reverting to CPU
+CUDA backend creation failed, reverting to CPU
+CUDA backend creation failed, reverting to CPU
+CUDA backend creation failed, reverting to CPU
+Epoch:  90 {:mean-squared-error 0.23016243916090073, :mean-error 0.4632215266698715}
+CUDA backend creation failed, reverting to CPU
+CUDA backend creation failed, reverting to CPU
+CUDA backend creation failed, reverting to CPU
+CUDA backend creation failed, reverting to CPU
+CUDA backend creation failed, reverting to CPU
+CUDA backend creation failed, reverting to CPU
+CUDA backend creation failed, reverting to CPU
+CUDA backend creation failed, reverting to CPU
+CUDA backend creation failed, reverting to CPU
+CUDA backend creation failed, reverting to CPU
+CUDA backend creation failed, reverting to CPU
+Epoch:  100 {:mean-squared-error 0.23928512266917293, :mean-error 0.47921996954072443}
+CUDA backend creation failed, reverting to CPU
+Resultados: {:mean-squared-error 0.23955970653166708, :mean-error 0.4794945739670017}

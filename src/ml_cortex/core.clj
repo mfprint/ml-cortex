@@ -7,8 +7,8 @@
         [clojure.pprint :refer [pprint]])
     (:gen-class))
 
-(slurp "./resources/googlePlayStoreCleaned.txt")
-(with-open [rdr (clojure.java.io/reader "./resources/googlePlayStoreCleaned.txt")]
+(slurp "./resources/googlestore.txt")
+(with-open [rdr (clojure.java.io/reader "./resources/googlestore.txt")]
 (def data (reduce conj [] (line-seq rdr)) )
     ;; (println data)
 )
@@ -85,7 +85,7 @@
 (def reviewsOnly
     (into []
         (map (fn [data]
-            (subvec data 3 4)
+            (subvec data 4 5)
         ) dataStructure)
     )
 )
@@ -136,7 +136,7 @@
 (def xTrain
     (subvec x 1 (int (* dataCount 0.8)))
 )
-;;(println xTrain)
+; (println xTrain)
 
 (def yTrain
     (subvec y 1 (int (* dataCount 0.8)))
@@ -150,18 +150,32 @@
     (subvec y (int (* dataCount 0.8)) dataCount)
 )
 
+; (def data_vector [])
+; (def total_seq (int (* dataCount 0.8)))
+; (dotimes [n total_seq]
+;     (if (> (count (get xTrain n)) 0)
+;         (do
+;             (def temp {:x (apply list (get xTrain n)) :y (apply list (get yTrain n))})
+;             (def data_vector (conj data_vector temp))
+;         )
+;         (println "NO_DATA")
+;     )
+; )
+; (def data_list (apply list data_vector))
+
 ;; ----------------|| Cortex ||---------------- ;;
 
 ; (def my_data (subvec (into [] (data/load-data)) 0 11))
-(defonce all-data (-> xTrain
-    ; (shuffle)
-    ; (data/train-validation-split 0.70)
+; (println (data/load-data))
+(defonce all-data (-> (data/load-data)
+    (shuffle)
+    (data/train-validation-split 0.70)
 ))
 
 (def num-nodes 32) ;; Num de neuronas
 
 (def network-architecture
-    [(layers/input 11 1 1 :id :x)
+    [(layers/input 4 1 1 :id :x)
 
     (layers/linear num-nodes)
     (layers/relu)

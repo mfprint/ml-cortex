@@ -10,7 +10,7 @@
 (defn load-data
       "Carga Archivo"
       []
-      (as-> (slurp "resources/data.csv") d
+      (as-> (slurp "resources/google_store.csv") d
             (string/split d #"\n")
             (map #(string/split % #",") d)
             (map #(map parse-float %) d)
